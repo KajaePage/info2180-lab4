@@ -4,7 +4,7 @@ body {
   background-position-y: 1200px;
     background-image: 
     linear-gradient( rgba(0, 0, 0, 0.849), rgba(0, 0, 0, 0.514) ),
-    url('background.jpg')
+    url('backgroundimage\ .jpg')
  }
 
  header{
@@ -62,9 +62,12 @@ button{
     border-radius: 5px;
     background-color: red; 
     border-style: none;
+    position: relative;
+    left: 840px;
+    bottom: 44px;
 }
 .btn{
-    margin-left: 10px;
+    margin-left: 0px;
     color: white;
     font-weight: bold;
     font-size: 18px;
@@ -79,7 +82,7 @@ button{
     color: white;
     font-size: xx-large;
     margin-bottom: 20px;
-    margin-top: 50px;
+    margin-top: 0px;
 }
 
 hr.divider{
@@ -89,3 +92,23 @@ hr.divider{
     margin-right: 100px;
     margin-top: 3px;
   }
+
+  .Result{
+      color: white;
+      font-size: larger;
+  }
+
+  .red{
+    color: red;
+    font-weight: bolder;
+  }
+
+  h3{
+    margin: 0px;
+  }
+  h4{
+    margin: 0px;
+  }
+p{
+  margin: 0px;
+}
