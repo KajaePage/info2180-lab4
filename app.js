@@ -23,7 +23,7 @@ function displaySearch(){
                 if(response.ok){
                     return response.text();
                 }else{
-                    throw new Error('BAD HTTP stuff');
+                    throw new Error('ERROR!');
                 }
             })
             .then( (Data) =>{
