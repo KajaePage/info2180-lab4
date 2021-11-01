@@ -1,8 +1,8 @@
+
 document.addEventListener("DOMContentLoaded", loadDOM)
 function loadDOM(){ 
     console.log("Website has Loaded!")
     displaySearch()
-    console.log("Message has been updated")
 }
 
 function displaySearch(){
@@ -11,11 +11,14 @@ function displaySearch(){
             
             let h = new Headers();
             h.append('Accept', 'application/php');
-            
+            var input = document.getElementById("text").value;
+            let formData = new FormData();
+            formData.append('heroname', Sanitizer(input));    
             let req = new Request(uri, {
                 method: 'POST',
                 headers: h,
-                mode: 'cors'
+                mode: 'cors',
+                body: formData
             });
             
             fetch(req)
@@ -27,12 +30,16 @@ function displaySearch(){
                 }
             })
             .then( (Data) =>{
-                console.log(Data);
-                alert(Data)
+                console.log(Data)
+                    document.getElementById('result').innerHTML= Data;
             })
             .catch( (err) =>{
                 console.log('ERROR:', err.message);
             });
        
     };
+}
+function Sanitizer(str) {
+    str = str.replace(/[^a-z0-9áéíóúñü \.,_-]/gim, " ");
+    return str.trim();
 }
